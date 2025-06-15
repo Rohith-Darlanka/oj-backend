@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Testcase = require("../models/Testcase");
+const Testcase = require("../models/testcase");
 
 
 router.get("/:problem_id", async (req, res) => {
