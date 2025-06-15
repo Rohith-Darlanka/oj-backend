@@ -13,7 +13,7 @@ const submitRoute = require("./routes/submit");
 const submissionRoutes = require("./routes/submissionRoutes");
 const aiReviewRoute = require("./routes/aiReview");
 const deletep = require("./routes/deletep");
-const hiddenTestcaseRoutes = require("./routes/HiddenTestcaseRoutes");
+const hiddenTestcaseRoutes = require("./routes/hiddenTestcaseRoutes");
 
 
 
