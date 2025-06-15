@@ -1,17 +1,13 @@
 const logout = (req, res) => {
   try {
-    // Clear the authentication cookie
     res.clearCookie('token', {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      path: '/',
+      secure: true,          // Must match login's 'secure: true'
+      sameSite: 'None',      // Must match login's 'sameSite: None'
+      path: '/',             // Must match login's path
+      // domain: '.yourdomain.com' // Uncomment if using cross-subdomains
     });
 
-    // Optional: Clear any other cookies you might have set
-    // res.clearCookie('refreshToken', { ...same options });
-
-    // Send success response
     res.status(200).json({ 
       success: true,
       message: 'Logged out successfully' 
@@ -20,8 +16,7 @@ const logout = (req, res) => {
     console.error('Logout error:', error);
     res.status(500).json({
       success: false,
-      message: 'Error during logout',
-      error: error.message
+      message: 'Error during logout'
     });
   }
 };
